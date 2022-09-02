@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>WASM example</title>
+    <script src="WASMToolkit/memoryWrapper.js"></script>
+    <script src="lab.js"></script>
+
+    <script>
+        function run_ws() {
+            var input = document.getElementById("password").value;
+            ptr = allocateUTF8(input)
+            ret = Module._checkPassword(ptr, input.length);
+
+            var flag = document.getElementById("flag");
+            if (ret) {
+              flag.innerText = "Success!!!";
+            }
+            else {
+              flag.innerText = "That is not the correct password";
+            }
+        }
+    </script>
+  </head>
+  
+  <body>
+    <h1>Password tester</h1>
+    <br>
+    <h3>Password:</h3>
+    <input type="password" id="password">
+    <button id="check" onclick="run_ws()">Check password</button>
+    <p id="flag"></p>
+    <script>
+      var password = document.getElementById("password");
+      password.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("check").click();
+        }
+      });
+    </script>
+  </body>
+</html>

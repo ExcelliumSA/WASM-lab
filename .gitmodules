@@ -1,0 +1,3 @@
+[submodule "WASMToolkit"]
+	path = WASMToolkit
+	url = https://github.com/ExcelliumSA/WASMToolkit
