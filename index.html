@@ -1,14 +1,13 @@
-
 <!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <title>WASM example</title>
-    <script src="https://cdn.jsdelivr.net/gh/ExcelliumSA/WASMToolkit/memoryWrapper.js"></script>
+    <title>WASM challenge</title>
+    <script src="https://cdn.jsdelivr.net/gh/ExcelliumSA/WASMToolkit/memoryWrapper.js" integrity="sha384-T4dh6ZUEuFR5NHm6IArNpntRsfMmxU1/ZHthgkBAVkbP3KqSgh0q4Yx3oIC/bTSD" crossorigin="anonymous"></script>
     <script src="lab.js"></script>
-
     <script>
         function run_ws() {
             var input = document.getElementById("password").value;
@@ -20,19 +19,35 @@
               flag.innerText = "Success!!!";
             }
             else {
-              flag.innerText = "That is not the correct password";
+              flag.innerText = "That is not the correct password.";
             }
         }
     </script>
+	<style type="text/css">
+		body > .container {
+		  padding: 10px;
+		  background-color: white;
+		  font-family: "Lucida Console", Courier, monospace;
+		}	
+	</style>
   </head>
   
   <body>
-    <h1>Password tester</h1>
-    <br>
-    <h3>Password:</h3>
-    <input type="password" id="password">
-    <button id="check" onclick="run_ws()">Check password</button>
-    <p id="flag"></p>
+	<div class="container">
+		<div class="alert alert-primary" role="alert">Try to recover the password 🤔</div>
+		
+		<div class="mb-3">
+			<label for="password" class="form-label">Password:</label>
+			<input type="password" id="password" class="form-control" placeholder="Insert password here" si>
+		</div>
+		
+		<div class="mb-3">
+			<button id="check" onclick="run_ws()" type="button" class="btn btn-success">Check password</button>
+		</div>		
+
+		<p id="flag"></p>
+	</div>
+	
     <script>
       var password = document.getElementById("password");
       password.addEventListener("keypress", function(event) {
