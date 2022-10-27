@@ -7,7 +7,7 @@ A simple lab to experiment with [WASM](https://webassembly.org/).
 
 # Local hosting
 
-💻 Please, when cloning, use `git clone --recursive git@github.com:ExcelliumSA/WASM-lab.git` so you have the wasm toolkit.
+💻 Please, when cloning, use `git clone --recursive git@github.com:ExcelliumSA/WASM-lab.git` so you have the **[WASM Toolkit](https://github.com/ExcelliumSA/WASMToolkit)**.
 
 💡 An easy way to have the lab running is to use `python3 -m http.server 80`.
 
